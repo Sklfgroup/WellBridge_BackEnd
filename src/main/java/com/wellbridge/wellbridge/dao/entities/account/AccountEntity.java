@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -61,6 +63,20 @@ public class AccountEntity extends BaseEntity {
     @OneToOne(mappedBy = "account", cascade = CascadeType.ALL)
     private MedicalInfo medicalInfo;
 
+    @ManyToMany
+    @JoinTable(
+            name = "medecin_patients",
+            joinColumns = @JoinColumn(name = "medecin_id"),
+            inverseJoinColumns = @JoinColumn(name = "patient_id")
+    )
+    private Set<AccountEntity> patients;
+
+    @ManyToMany(mappedBy = "patients")
+    private Set<AccountEntity> medecins;
+
     @Transient
     private String token;
+
+    @Transient
+    private String FirebaseToken;
 }

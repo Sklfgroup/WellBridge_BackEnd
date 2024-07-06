@@ -4,7 +4,69 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d352c6c-e383-4bb7-a904-9a5c7ff7bde3" name="Changes" comment="" />
+    <list default="true" id="8d352c6c-e383-4bb7-a904-9a5c7ff7bde3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/account/AccountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/account/AccountEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/patient/DossierMedical.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/patient/MedicalHistory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/patient/MedicalInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/patient/MedicalInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/patient/MedicalInfoAccessRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/patient/MedicalSpeciality.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/repository/DossierMedicalRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/repository/MedicalHistoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/repository/MedicalInfoAccessRequestRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/repository/MedicalSpecialityRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/MedicalHistoryControllerApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/MedicalInfoAccessControllerApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/MedicalSpecialityControllerApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/MedicalHistoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/MedicalInfoAccessController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/MedicalSpecialityController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/requests/patient/AccessRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/responses/patient/AccessResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/security/jwt/JwtUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/security/jwt/JwtUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/MedicalInfoAccessService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/MedicalSpecialityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/MedicalSpecialityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/MedicalHistoryServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/MedicalInfoAccessServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/MedicalSpecialityServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/dao/entities/account/AccountEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/dao/entities/account/AccountEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/dao/entities/patient/DossierMedical.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/dao/entities/patient/MedicalHistory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/dao/entities/patient/MedicalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/dao/entities/patient/MedicalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/dao/entities/patient/MedicalInfoAccessRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/dao/entities/patient/MedicalSpeciality.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/dao/entities/repository/DossierMedicalRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/dao/entities/repository/MedicalHistoryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/dao/entities/repository/MedicalInfoAccessRequestRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/dao/entities/repository/MedicalSpecialityRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/rest/api/MedicalHistoryControllerApi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/rest/api/MedicalInfoAccessControllerApi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/rest/api/MedicalSpecialityControllerApi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/rest/controllers/MedicalHistoryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/rest/controllers/MedicalInfoAccessController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/rest/controllers/MedicalSpecialityController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/rest/dto/requests/patient/AccessRequestDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/rest/dto/responses/patient/AccessResponseDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/security/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/security/jwt/JwtUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/security/jwt/JwtUserDetailsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/services/MedicalInfoAccessService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/services/impl/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/services/impl/AccountServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/services/impl/MedicalHistoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/services/impl/MedicalInfoAccessServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wellbridge/wellbridge/services/impl/MedicalSpecialityServiceImpl.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,19 +97,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;futureMedicalRecord&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/Documents/GitHub/WellBridge_BackEnd/src/main/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Unnamed.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "futureMedicalRecord",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/DELL/Documents/GitHub/WellBridge_BackEnd/src/main/resources",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\DELL\Documents\GitHub\WellBridge_BackEnd\src\main\resources" />
@@ -91,6 +154,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/responses/patient/AccessResponse.java</url>
           <line>1</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/MedicalHistoryServiceImpl.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

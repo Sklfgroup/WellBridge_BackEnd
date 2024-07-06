@@ -21,15 +21,12 @@ public class MedicalInfo extends BaseEntity {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "account_id", referencedColumnName = "id")
+    @JoinColumn(name = "account_id")
     private AccountEntity account;
 
-    @OneToOne(mappedBy = "medicalInfo", cascade = CascadeType.ALL)
-    private DossierMedical dossierMedical;
+    @OneToMany(mappedBy = "medicalInfo", cascade = CascadeType.ALL)
+    private Set<Specialization> specializations;
 
-    @ManyToMany
-    @JoinTable(name = "medical_info_history",
-            joinColumns = @JoinColumn(name = "medical_info_id"),
-            inverseJoinColumns = @JoinColumn(name = "medical_history_id"))
-    private Set<MedicalHistory> medicalHistories = new HashSet<>();
+    @OneToMany(mappedBy = "medicalInfo", cascade = CascadeType.ALL)
+    private Set<AntecedentMedical> antecedents;
 }

@@ -1,6 +1,5 @@
 package com.wellbridge.wellbridge.services;
 
-import com.wellbridge.wellbridge.dao.entities.patient.MedicalSpeciality;
 import com.wellbridge.wellbridge.rest.dto.requests.patient.MedicalSpecialityRequestDTO;
 import com.wellbridge.wellbridge.rest.dto.responses.patient.MedicalSpecialityResponseDTO;
 

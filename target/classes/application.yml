@@ -29,3 +29,6 @@ logging:
     root: INFO
     org.springframework.web: DEBUG
     com.wellbridge.wellbridge: DEBUG
+
+app:
+  firebase-configuration-file: well-bridge-firebase-adminsdk.json

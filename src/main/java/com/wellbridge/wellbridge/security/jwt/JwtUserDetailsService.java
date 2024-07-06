@@ -16,6 +16,8 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     @Autowired
     private AccountRepository accountRepository;
+    @Autowired
+    private JwtTokenUtil jwtTokenUtil;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -26,4 +28,6 @@ public class JwtUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
     }
+
+
 }

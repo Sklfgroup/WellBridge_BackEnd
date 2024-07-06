@@ -74,8 +74,8 @@ public class AccountServiceImpl implements AccountService {
 
        // Création de l'information médicale
        MedicalInfo medicalInfo = new MedicalInfo();
-       patientAccount.setMedicalInfo(medicalInfo);
        medicalInfo.setAccount(patientAccount);
+       patientAccount.setMedicalInfo(medicalInfo);
 
         return accountRepository.save(patientAccount);
     }
