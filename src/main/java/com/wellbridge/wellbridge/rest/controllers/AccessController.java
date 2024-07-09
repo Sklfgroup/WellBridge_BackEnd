@@ -1,6 +1,7 @@
 package com.wellbridge.wellbridge.rest.controllers;
 
 import com.wellbridge.wellbridge.rest.api.AccessControllerApi;
+import com.wellbridge.wellbridge.rest.dto.requests.patient.CreateAccessRequest;
 import com.wellbridge.wellbridge.services.AccessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,14 +16,14 @@ public class AccessController implements AccessControllerApi {
     private AccessService accessService;
 
     @Override
-    public ResponseEntity<Void> requestAccess(String medecinUuid, String medicalInfoUuid) {
-        accessService.requestAccess(medecinUuid, medicalInfoUuid);
+    public ResponseEntity<Void> requestAccess(CreateAccessRequest accessRequestDTO) {
+        accessService.requestAccess(accessRequestDTO.getMedecinUuid(), accessRequestDTO.getMedicalInfoUuid());
         return ResponseEntity.ok().build();
     }
 
     @Override
-    public ResponseEntity<Void> respondToAccessRequest(String medecinUuid, String medicalInfoUuid, boolean isApproved) {
-        accessService.respondToAccessRequest(medecinUuid, medicalInfoUuid, isApproved);
+    public ResponseEntity<Void> respondToAccessRequest(CreateAccessRequest accessRequestDTO, boolean isApproved) {
+        accessService.respondToAccessRequest(accessRequestDTO.getMedecinUuid(), accessRequestDTO.getMedicalInfoUuid(), isApproved);
         return ResponseEntity.ok().build();
     }
 }

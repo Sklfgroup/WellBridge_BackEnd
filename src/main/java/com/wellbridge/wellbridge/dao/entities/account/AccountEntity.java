@@ -77,6 +77,6 @@ public class AccountEntity extends BaseEntity {
     @Transient
     private String token;
 
-    @Transient
+
     private String FirebaseToken;
 }
