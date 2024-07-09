@@ -18,6 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/accounts")
+@CrossOrigin(origins = "http://localhost")
 public class AccountController implements AccountApi {
 
     private final AccountService accountService;

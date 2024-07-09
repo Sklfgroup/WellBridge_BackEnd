@@ -11,29 +11,37 @@ import java.util.List;
 
 public interface AccountApi {
     @PostMapping("/authenticate")
+    @CrossOrigin(origins = "http://localhost")
     ResponseEntity<ConnexionAccountResponse> authenticate(@RequestBody ConnexionAccountRequest request);
 
     @PutMapping("/update/{uuid}")
+    @CrossOrigin(origins = "http://localhost")
     ResponseEntity<AccountDataResponse> updateAccount(@PathVariable String uuid, @RequestBody UpdateAccountRequest request);
 
     @GetMapping("/uuid/{uuid}")
+    @CrossOrigin(origins = "http://localhost")
     ResponseEntity<AccountEntity> getAccountByUuid(@PathVariable String uuid);
 
     @GetMapping("/username/{username}")
+    @CrossOrigin(origins = "http://localhost")
     ResponseEntity<AccountEntity> getAccountByUsername(@PathVariable String username);
 
     @GetMapping
     ResponseEntity<List<AccountEntity>> getAllAccounts();
 
     @GetMapping("/role/{role}")
+    @CrossOrigin(origins = "http://localhost")
     ResponseEntity<List<AccountEntity>> getAccountsByRole(@PathVariable UserRole role);
 
     @PostMapping("/create-admin")
+    @CrossOrigin(origins = "http://localhost")
     ResponseEntity<AdminResponse> createAdmin(@RequestBody CreateAdminRequest adminRequest);
 
     @PostMapping("/create-patient")
+    @CrossOrigin(origins = "http://localhost")
     ResponseEntity<PatientResponse> createPatient(@RequestBody CreatePatientRequest patientRequest);
 
     @PostMapping("/create-medecin")
+    @CrossOrigin(origins = "http://localhost")
     ResponseEntity<MedecinResponse> createMedecin(@RequestBody CreateMedecinRequest medecinRequest);
 }

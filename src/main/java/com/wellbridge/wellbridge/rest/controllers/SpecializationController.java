@@ -7,11 +7,13 @@ import com.wellbridge.wellbridge.services.SpecializationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/specializations")
+@CrossOrigin(origins = "http://localhost")
 public class SpecializationController implements SpecializationControllerApi {
 
     private final SpecializationService specializationService;
@@ -23,6 +25,7 @@ public class SpecializationController implements SpecializationControllerApi {
 
     @Override
     @PreAuthorize("hasRole('SUPERADMINISTRATOR')")
+    @CrossOrigin(origins = "http://localhost")
     public ResponseEntity<SpecializationResponse> createSpecialization(CreateSpecializationRequest request) {
         SpecializationResponse response = specializationService.createSpecializationForAllPatients(request);
         return ResponseEntity.ok(response);
