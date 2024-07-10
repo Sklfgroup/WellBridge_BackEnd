@@ -9,4 +9,5 @@ public class CreateAccessRequest {
     private String medecinUuid;
     private String medicalInfoUuid;
 
+
 }

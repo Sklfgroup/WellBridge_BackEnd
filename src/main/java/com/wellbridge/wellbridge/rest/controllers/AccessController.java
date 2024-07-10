@@ -24,8 +24,14 @@ public class AccessController implements AccessControllerApi {
     }
 
     @Override
-    public ResponseEntity<Void> respondToAccessRequest(CreateAccessRequest accessRequestDTO, boolean isApproved) {
-        accessService.respondToAccessRequest(accessRequestDTO.getMedecinUuid(), accessRequestDTO.getMedicalInfoUuid(), isApproved);
+    public ResponseEntity<Void> acceptAccessRequest(Long accessRequestId) {
+        accessService.acceptAccessRequest(accessRequestId);
+        return ResponseEntity.ok().build();
+    }
+
+    @Override
+    public ResponseEntity<Void> rejectAccessRequest(Long accessRequestId) {
+        accessService.rejectAccessRequest(accessRequestId);
         return ResponseEntity.ok().build();
     }
 }

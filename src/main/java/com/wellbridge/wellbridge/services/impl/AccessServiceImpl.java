@@ -2,6 +2,7 @@ package com.wellbridge.wellbridge.services.impl;
 
 import com.wellbridge.wellbridge.dao.entities.account.AccountEntity;
 import com.wellbridge.wellbridge.dao.entities.patient.AccessRequest;
+import com.wellbridge.wellbridge.dao.entities.patient.AccessStatus;
 import com.wellbridge.wellbridge.dao.entities.patient.MedicalInfo;
 import com.wellbridge.wellbridge.dao.entities.repository.AccountRepository;
 import com.wellbridge.wellbridge.dao.entities.repository.AccessRequestRepository;
@@ -41,6 +42,7 @@ public class AccessServiceImpl implements AccessService {
             AccessRequest accessRequest = new AccessRequest();
             accessRequest.setMedecin(medecin);
             accessRequest.setPatient(patient);
+            accessRequest.setStatus(AccessStatus.PENDING);
             accessRequestRepository.save(accessRequest);
 
             notificationService.sendAccessRequestNotification(patient, medecin);
@@ -52,28 +54,40 @@ public class AccessServiceImpl implements AccessService {
     }
 
     @Override
-    public void respondToAccessRequest(String medecinUuid, String medicalInfoUuid, boolean isApproved) {
-        Optional<AccountEntity> medecinOpt = accountRepository.findByUuid(medecinUuid);
-        Optional<MedicalInfo> medicalInfoOpt = medicalInfoRepository.findByUuid(medicalInfoUuid);
+    public void acceptAccessRequest(Long accessRequestId) {
+        Optional<AccessRequest> accessRequestOpt = accessRequestRepository.findById(accessRequestId);
 
-        if (medecinOpt.isPresent() && medicalInfoOpt.isPresent()) {
-            AccountEntity medecin = medecinOpt.get();
-            MedicalInfo medicalInfo = medicalInfoOpt.get();
-            AccountEntity patient = medicalInfo.getAccount();
+        if (accessRequestOpt.isPresent()) {
+            AccessRequest accessRequest = accessRequestOpt.get();
+            accessRequest.setStatus(AccessStatus.ACCEPTED);
+            accessRequestRepository.save(accessRequest);
 
-            if (isApproved) {
-                // Add medecin to patient's medecins list and patient to medecin's patients list
-                medecin.getPatients().add(patient);
-                patient.getMedecins().add(medecin);
-                accountRepository.save(medecin);
-                accountRepository.save(patient);
-            }
+            AccountEntity medecin = accessRequest.getMedecin();
+            AccountEntity patient = accessRequest.getPatient();
 
-            notificationService.sendAccessResponseNotification(medecin, isApproved);
+            medecin.getPatients().add(patient);
+            patient.getMedecins().add(medecin);
+            accountRepository.save(medecin);
+            accountRepository.save(patient);
+
+            notificationService.sendAccessResponseNotification(medecin, true);
         } else {
-            // Handle the case where medecin or medicalInfo is not found
-            // You can throw an exception or handle it appropriately
-            throw new RuntimeException("Medecin or MedicalInfo not found");
+            throw new RuntimeException("Access Request not found");
+        }
+    }
+
+    @Override
+    public void rejectAccessRequest(Long accessRequestId) {
+        Optional<AccessRequest> accessRequestOpt = accessRequestRepository.findById(accessRequestId);
+
+        if (accessRequestOpt.isPresent()) {
+            AccessRequest accessRequest = accessRequestOpt.get();
+            accessRequest.setStatus(AccessStatus.REJECTED);
+            accessRequestRepository.save(accessRequest);
+
+            notificationService.sendAccessResponseNotification(accessRequest.getMedecin(), false);
+        } else {
+            throw new RuntimeException("Access Request not found");
         }
     }
 }

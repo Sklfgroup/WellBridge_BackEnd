@@ -11,7 +11,9 @@ public interface AccessControllerApi {
     ResponseEntity<Void> requestAccess(@RequestBody CreateAccessRequest createAccessRequest);
 
 
-    @PostMapping("/respond")
-    @CrossOrigin(origins = "http://localhost")
-    ResponseEntity<Void> respondToAccessRequest(@RequestBody CreateAccessRequest createAccessRequest, @RequestParam boolean isApproved);
+    @PostMapping("/accept/{accessRequestId}")
+    ResponseEntity<Void> acceptAccessRequest(@PathVariable Long accessRequestId);
+
+    @PostMapping("/reject/{accessRequestId}")
+    ResponseEntity<Void> rejectAccessRequest(@PathVariable Long accessRequestId);
 }

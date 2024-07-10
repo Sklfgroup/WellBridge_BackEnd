@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d352c6c-e383-4bb7-a904-9a5c7ff7bde3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/security/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/patient/AccessStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/patient/AccessStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/AccessControllerApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/AccessControllerApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/AccountApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/AccountApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/SpecializationControllerApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/SpecializationControllerApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AccessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AccessController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/SpecializationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/SpecializationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/requests/patient/CreateAccessRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/requests/patient/CreateAccessRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/AccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/AccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/Notification/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/Notification/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/AccessServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/AccessServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,21 +44,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Unnamed.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "futureMedicalRecord",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/DELL/Documents/GitHub/WellBridge_BackEnd/src/main/resources",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;futureMedicalRecord&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/Documents/GitHub/WellBridge_BackEnd/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\DELL\Documents\GitHub\WellBridge_BackEnd\src\main\resources" />
