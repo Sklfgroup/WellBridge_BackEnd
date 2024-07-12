@@ -21,11 +21,23 @@ public record CreatePatientRequest(
         @NotBlank(message = "Password is required")
         @JsonProperty("password") String password,
 
-        @NotBlank(message = "Code is required")
-        @JsonProperty("code") String code,
-
         @NotBlank(message = "BloodGroup is require")
         @JsonProperty("BloodGroup") String BloodGroup,
+
+        @NotBlank(message = "BloodGroup is not require")
+        @JsonProperty("Sexe") String Sexe,
+
+        @NotBlank(message = "BloodGroup is not require")
+        @JsonProperty("City") String City,
+
+        @NotBlank(message = "BloodGroup is not require")
+        @JsonProperty("Profession") String Profession,
+
+        @NotBlank(message = "BloodGroup is not require")
+        @JsonProperty("Alcohol") String Alcohol,
+
+        @NotBlank(message = "BloodGroup is not require")
+        @JsonProperty("Smoking") String Smoking,
 
         @NotBlank(message = "Number is required")
         @JsonProperty("number") String number,
@@ -36,7 +48,6 @@ public record CreatePatientRequest(
         @NotBlank(message = "Address is required")
         @JsonProperty("adresse") String adresse,
 
-        @JsonProperty("registrationNumber") String registrationNumber,
         @NotNull(message = "function is required")
         @JsonProperty(value = "userRole", required = true)
         UserRole userRole
@@ -49,6 +60,11 @@ public record CreatePatientRequest(
         entity.setPassword(password);
         entity.setNumber(number);
         entity.setDateOfBirth(dateOfBirth);
+        entity.setAlcohol(Alcohol);
+        entity.setSexe(Sexe);
+        entity.setCity(City);
+        entity.setProfession(Profession);
+        entity.setSmoking(Smoking);
         entity.setAdresse(adresse);
         entity.setBloodGroup(BloodGroup);
         entity.setUserRole(userRole);

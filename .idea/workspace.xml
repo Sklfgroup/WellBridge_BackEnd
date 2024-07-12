@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d352c6c-e383-4bb7-a904-9a5c7ff7bde3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/medecin/AgendaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/medecin/AppointmentEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/medecin/AppointmentStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/repository/AgendaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/repository/AppointmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/AgendaControllerApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/AppointmentControllerApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AgendaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AppointmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/AgendaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/AppointmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/AgendaServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/AppointmentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/patient/AccessStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/patient/AccessStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/AccessControllerApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/AccessControllerApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AccessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AccessController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/requests/patient/CreateAccessRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/requests/patient/CreateAccessRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/AccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/AccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/Notification/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/Notification/NotificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/AccessServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/AccessServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/account/AccountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/dao/entities/account/AccountEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/requests/account/CreatePatientRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/requests/account/CreatePatientRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +32,8 @@
       <list>
         <option value="Record" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>

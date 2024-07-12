@@ -1,5 +1,7 @@
 package com.wellbridge.wellbridge.dao.entities.account;
 
+
+
 import com.wellbridge.wellbridge.dao.entities.BaseEntity;
 import com.wellbridge.wellbridge.dao.entities.patient.MedicalInfo;
 import jakarta.persistence.*;
@@ -44,6 +46,20 @@ public class AccountEntity extends BaseEntity {
     @Column(name="BloodGroup")
     private String BloodGroup;
 
+    @Column(name ="sexe")
+    private String Sexe;
+
+    @Column(name = "city")
+    private String City;
+
+    @Column(name= "profession")
+    private String Profession;
+
+    @Column(name = "alcohol")
+    private String Alcohol;
+
+    @Column(name ="smoking")
+    private String Smoking;
 
 
     @Column(name = "adresse")
