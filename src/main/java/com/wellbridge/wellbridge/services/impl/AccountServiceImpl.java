@@ -8,6 +8,11 @@ import com.wellbridge.wellbridge.exceptions.ResourceNotFoundException;
 import com.wellbridge.wellbridge.rest.dto.requests.account.UpdateAccountRequest;
 import com.wellbridge.wellbridge.security.jwt.JwtTokenUtil;
 import com.wellbridge.wellbridge.services.AccountService;
+import com.wellbridge.wellbridge.services.email.EmailService;
+import jakarta.mail.internet.AddressException;
+import jakarta.mail.internet.InternetAddress;
+import org.apache.commons.lang3.RandomStringUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,18 +24,50 @@ public class AccountServiceImpl implements AccountService {
 
     private final AccountRepository accountRepository;
     private final PasswordEncoder passwordEncoder;
+    private final EmailService emailService;
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
 
 
     @Autowired
     public AccountServiceImpl(AccountRepository accountRepository, PasswordEncoder passwordEncoder,
-                              JwtTokenUtil jwtTokenUtil) {
+                              JwtTokenUtil jwtTokenUtil, EmailService emailService) {
         this.accountRepository = accountRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtTokenUtil = jwtTokenUtil;
+        this.emailService = emailService;
     }
-    @Override
+
+    private boolean isValidEmail(String email) {
+        try {
+            InternetAddress emailAddr = new InternetAddress(email);
+            emailAddr.validate();
+            return true;
+        } catch (AddressException ex) {
+            return false;
+        }
+    }
+
+    private String generatePassword() {
+        return RandomStringUtils.randomAlphanumeric(10);
+    }
+
+    private void sendPasswordEmail(String email, String password) {
+        String subject = "Votre compte a été créé";
+        String text = "Votre mot de passe est : " + password;
+        emailService.sendEmail(email, subject, text);
+    }
+
+    private void createAndSaveAccount(AccountEntity account) {
+        if (accountRepository.existsByUsername(account.getUsername())) {
+            throw new IllegalArgumentException("Username already exists");
+        }
+        String rawPassword = generatePassword();
+        account.setPassword(passwordEncoder.encode(rawPassword));
+        accountRepository.save(account);
+        sendPasswordEmail(account.getUsername(), rawPassword);
+    }
+    /*@Override
     public AccountEntity createAdminAccount(AccountEntity adminAccount) {
         if (adminAccount.getUserRole() != UserRole.ADMINISTRATOR) {
             throw new IllegalArgumentException("Only ADMINISTRATOR accounts can be created with this method");
@@ -40,7 +77,34 @@ public class AccountServiceImpl implements AccountService {
         }
         adminAccount.setPassword(passwordEncoder.encode(adminAccount.getPassword()));
         return accountRepository.save(adminAccount);
+    }*/
+
+    @Override
+    public AccountEntity createAdminAccount(AccountEntity adminAccount) {
+        if (!isValidEmail(adminAccount.getUsername())) {
+            throw new IllegalArgumentException("Invalid email address");
+        }
+        if (adminAccount.getUserRole() != UserRole.ADMINISTRATOR) {
+            throw new IllegalArgumentException("Only ADMINISTRATOR accounts can be created with this method");
+        }
+        createAndSaveAccount(adminAccount);
+        return adminAccount;
     }
+
+    @Override
+    public AccountEntity createPatientAccount(AccountEntity patientAccount) {
+        if (!isValidEmail(patientAccount.getUsername())) {
+            throw new IllegalArgumentException("Invalid email address");
+        }
+        if (patientAccount.getUserRole() != UserRole.PATIENT) {
+            throw new IllegalArgumentException("Only PATIENT accounts can be created with this method");
+        }
+        createAndSaveAccount(patientAccount);
+        return patientAccount;
+    }
+
+
+
 
     @Override
     public AccountEntity updateAccount(String uuid, UpdateAccountRequest request) {
@@ -62,7 +126,7 @@ public class AccountServiceImpl implements AccountService {
                 .orElseThrow(() -> new ResourceNotFoundException("Account not found with uuid " + uuid));
     }
 
-   @Override
+   /*@Override
     public AccountEntity createPatientAccount(AccountEntity patientAccount) {
         if (patientAccount.getUserRole() != UserRole.PATIENT) {
             throw new IllegalArgumentException("Only PATIENT accounts can be created with this method");
@@ -78,11 +142,27 @@ public class AccountServiceImpl implements AccountService {
        patientAccount.setMedicalInfo(medicalInfo);
 
         return accountRepository.save(patientAccount);
+    }*/
+
+    @Override
+    public AccountEntity createMedecinAccount(AccountEntity medecinAccount) {
+        if (!isValidEmail(medecinAccount.getUsername())) {
+            throw new IllegalArgumentException("Invalid email address");
+        }
+        if (medecinAccount.getUserRole() != UserRole.MEDECIN) {
+            throw new IllegalArgumentException("Only MEDECIN accounts can be created with this method");
+        }
+        createAndSaveAccount(medecinAccount);
+        return medecinAccount;
     }
 
 
 
-    @Override
+
+
+
+
+   /* @Override
     public AccountEntity createMedecinAccount(AccountEntity medecinAccount) {
         if (medecinAccount.getUserRole() != UserRole.MEDECIN) {
             throw new IllegalArgumentException("Only MEDECIN accounts can be created with this method");
@@ -92,7 +172,10 @@ public class AccountServiceImpl implements AccountService {
         }
         medecinAccount.setPassword(passwordEncoder.encode(medecinAccount.getPassword()));
         return accountRepository.save(medecinAccount);
-    }
+    }*/
+
+
+
 
 
 

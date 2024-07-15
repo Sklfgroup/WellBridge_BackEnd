@@ -18,8 +18,7 @@ public record CreatePatientRequest(
         @NotBlank(message = "Username is required")
         @JsonProperty("username") String username,
 
-        @NotBlank(message = "Password is required")
-        @JsonProperty("password") String password,
+
 
         @NotBlank(message = "BloodGroup is require")
         @JsonProperty("BloodGroup") String BloodGroup,
@@ -57,7 +56,6 @@ public record CreatePatientRequest(
         entity.setFirstname(firstname);
         entity.setLastname(lastname);
         entity.setUsername(username);
-        entity.setPassword(password);
         entity.setNumber(number);
         entity.setDateOfBirth(dateOfBirth);
         entity.setAlcohol(Alcohol);

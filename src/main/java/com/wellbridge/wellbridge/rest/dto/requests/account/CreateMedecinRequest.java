@@ -17,11 +17,6 @@ public record CreateMedecinRequest(
         @NotBlank(message = "Username is required")
         @JsonProperty("username") String username,
 
-        @NotBlank(message = "Password is required")
-        @JsonProperty("password") String password,
-
-        @NotBlank(message = "Code is required")
-        @JsonProperty("code") String code,
 
         @NotBlank(message = "Number is required")
         @JsonProperty("number") String number,
@@ -43,8 +38,6 @@ public record CreateMedecinRequest(
         entity.setFirstname(firstname);
         entity.setLastname(lastname);
         entity.setUsername(username);
-        entity.setPassword(password);
-        entity.setCode(code);
         entity.setNumber(number);
         entity.setDateOfBirth(dateOfBirth);
         entity.setAdresse(adresse);

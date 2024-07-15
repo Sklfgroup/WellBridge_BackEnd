@@ -41,3 +41,18 @@ logging:
 
 app:
   firebase-configuration-file: well-bridge-firebase-adminsdk.json
+
+
+mail:
+  host: smtp.gmail.com
+  port: 587
+  username: franklindjoumessi576@gmail.com
+  password: bomolytxsacgoipc
+  properties:
+    mail:
+      smtp:
+        auth: true
+        starttls:
+          enable: true
+
+

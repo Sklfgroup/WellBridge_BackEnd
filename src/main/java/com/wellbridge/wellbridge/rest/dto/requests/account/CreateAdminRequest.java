@@ -17,9 +17,6 @@ public record CreateAdminRequest(
         @NotBlank(message = "Username is required")
         @JsonProperty("username") String username,
 
-        @NotBlank(message = "Password is required")
-        @JsonProperty("password") String password,
-
 
         @NotBlank(message = "Number is required")
         @JsonProperty("number") String number,
@@ -37,7 +34,6 @@ public record CreateAdminRequest(
         entity.setFirstname(firstname);
         entity.setLastname(lastname);
         entity.setUsername(username);
-        entity.setPassword(password);
         entity.setNumber(number);
         entity.setAdresse(adresse);
         entity.setUserRole(userRole);
