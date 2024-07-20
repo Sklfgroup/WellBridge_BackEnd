@@ -16,7 +16,7 @@ public class NotificationService {
     @Autowired
     private FirebaseMessaging firebaseMessaging;
 
-    public void sendAccessRequestNotification(AccountEntity patient, AccountEntity medecin) {
+    public void sendAccessRequestNotification(AccountEntity patient, AccountEntity medecin, Long accessRequestId) {
         String patientFirebaseToken = patient.getFirebaseToken();
 
         if (patientFirebaseToken != null && !patientFirebaseToken.isEmpty()) {
@@ -29,6 +29,7 @@ public class NotificationService {
                     .setToken(patientFirebaseToken)
                     .setNotification(notification)
                     .putData("medecinUuid", medecin.getUuid())
+                    .putData("accessRequest", accessRequestId.toString())
                     .putData("type", "ACCESS_REQUEST")
                     .build();
 
@@ -40,7 +41,7 @@ public class NotificationService {
         }
     }
 
-    public void sendAccessResponseNotification(AccountEntity medecin, boolean isApproved) {
+    public void sendAccessResponseNotification(AccountEntity medecin, boolean isApproved, Long accessRequestId) {
         String medecinFirebaseToken = medecin.getFirebaseToken();
 
         if (medecinFirebaseToken != null && !medecinFirebaseToken.isEmpty()) {

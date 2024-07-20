@@ -11,17 +11,10 @@ spring:
       ddl-auto: update
       dialect: org.hibernate.dialect.MySQL5Dialect
 
-  mvc:
-    cors:
-      mappings:
-        - path: /**
-          allowed-origins: "http://localhost"
-          allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
-          allowed-headers: "*"
-          allow-credentials: true
 
 server:
   port: 8083
+  adress: 192.186.1.101
 
 jwt:
   secret: RandomSecretKeyIsNothingHappensInContradictionToNatureOnlyInContradictionToWhatWeKnowOfItXFilesS04E5

@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/specializations")
-@CrossOrigin(origins = "http://localhost")
+@CrossOrigin
+
 public class SpecializationController implements SpecializationControllerApi {
 
     private final SpecializationService specializationService;

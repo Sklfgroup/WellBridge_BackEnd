@@ -12,6 +12,8 @@ import com.wellbridge.wellbridge.services.Notification.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -45,7 +47,7 @@ public class AccessServiceImpl implements AccessService {
             accessRequest.setStatus(AccessStatus.PENDING);
             accessRequestRepository.save(accessRequest);
 
-            notificationService.sendAccessRequestNotification(patient, medecin);
+            notificationService.sendAccessRequestNotification(patient, medecin, accessRequest.getId());
         } else {
             // Handle the case where medecin or medicalInfo is not found
             // You can throw an exception or handle it appropriately
@@ -70,7 +72,7 @@ public class AccessServiceImpl implements AccessService {
             accountRepository.save(medecin);
             accountRepository.save(patient);
 
-            notificationService.sendAccessResponseNotification(medecin, true);
+            notificationService.sendAccessResponseNotification(medecin, true, accessRequest.getId());
         } else {
             throw new RuntimeException("Access Request not found");
         }
@@ -85,9 +87,11 @@ public class AccessServiceImpl implements AccessService {
             accessRequest.setStatus(AccessStatus.REJECTED);
             accessRequestRepository.save(accessRequest);
 
-            notificationService.sendAccessResponseNotification(accessRequest.getMedecin(), false);
+            notificationService.sendAccessResponseNotification(accessRequest.getMedecin(), false, accessRequest.getId());
         } else {
             throw new RuntimeException("Access Request not found");
         }
     }
+
+
 }

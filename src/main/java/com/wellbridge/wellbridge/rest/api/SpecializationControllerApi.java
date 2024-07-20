@@ -10,6 +10,5 @@ import org.springframework.web.bind.annotation.PostMapping;
 public interface SpecializationControllerApi {
 
     @PostMapping("/create")
-    @CrossOrigin(origins = "http://localhost")
     ResponseEntity<SpecializationResponse> createSpecialization(@RequestBody CreateSpecializationRequest request);
 }

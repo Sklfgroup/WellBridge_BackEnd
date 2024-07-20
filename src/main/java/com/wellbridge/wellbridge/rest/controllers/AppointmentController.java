@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/appointments")
+@CrossOrigin
 public class AppointmentController implements AppointmentControllerApi {
     @Autowired
     private AppointmentService appointmentService;

@@ -3,6 +3,8 @@ package com.wellbridge.wellbridge.services;
 import com.wellbridge.wellbridge.dao.entities.account.AccountEntity;
 import com.wellbridge.wellbridge.dao.entities.account.UserRole;
 import com.wellbridge.wellbridge.rest.dto.requests.account.UpdateAccountRequest;
+import com.wellbridge.wellbridge.rest.dto.responses.medecin.MedecinResponseDTO;
+import com.wellbridge.wellbridge.rest.dto.responses.patient.PatientResponseDTO;
 
 import java.util.List;
 
@@ -19,5 +21,7 @@ public interface AccountService {
     List<AccountEntity> getAllAccounts();
     List<AccountEntity> getAccountsByRole(UserRole role);
     AccountEntity authenticate(String username, String password);
+    List<MedecinResponseDTO> getMedecinsOfPatient(String patientUuid);
+    List<PatientResponseDTO> getPatientsOfMedecin(String medecinUuid);
 
 }

@@ -2,10 +2,11 @@ package com.wellbridge.wellbridge.services.impl;
 
 import com.wellbridge.wellbridge.dao.entities.account.AccountEntity;
 import com.wellbridge.wellbridge.dao.entities.account.UserRole;
-import com.wellbridge.wellbridge.dao.entities.patient.MedicalInfo;
 import com.wellbridge.wellbridge.dao.entities.repository.AccountRepository;
 import com.wellbridge.wellbridge.exceptions.ResourceNotFoundException;
 import com.wellbridge.wellbridge.rest.dto.requests.account.UpdateAccountRequest;
+import com.wellbridge.wellbridge.rest.dto.responses.medecin.MedecinResponseDTO;
+import com.wellbridge.wellbridge.rest.dto.responses.patient.PatientResponseDTO;
 import com.wellbridge.wellbridge.security.jwt.JwtTokenUtil;
 import com.wellbridge.wellbridge.services.AccountService;
 import com.wellbridge.wellbridge.services.email.EmailService;
@@ -18,6 +19,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -208,6 +211,34 @@ public class AccountServiceImpl implements AccountService {
             return account;
         } else {
             throw new IllegalArgumentException("Invalid username or password");
+        }
+    }
+
+    @Override
+    public List<MedecinResponseDTO> getMedecinsOfPatient(String patientUuid) {
+        Optional<AccountEntity> patientOpt = accountRepository.findByUuid(patientUuid);
+        if (patientOpt.isPresent()) {
+            AccountEntity patient = patientOpt.get();
+            return patient.getMedecins().stream()
+                    .filter(account -> account.getUserRole() == UserRole.MEDECIN)
+                    .map(MedecinResponseDTO::new)
+                    .collect(Collectors.toList());
+        } else {
+            throw new RuntimeException("Patient not found");
+        }
+    }
+
+    @Override
+    public List<PatientResponseDTO> getPatientsOfMedecin(String medecinUuid) {
+        Optional<AccountEntity> medecinOpt = accountRepository.findByUuid(medecinUuid);
+        if (medecinOpt.isPresent()) {
+            AccountEntity medecin = medecinOpt.get();
+            return medecin.getPatients().stream()
+                    .filter(account -> account.getUserRole() == UserRole.PATIENT)
+                    .map(PatientResponseDTO::new)
+                    .collect(Collectors.toList());
+        } else {
+            throw new RuntimeException("Medecin not found");
         }
     }
 }

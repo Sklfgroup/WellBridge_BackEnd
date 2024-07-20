@@ -5,13 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d352c6c-e383-4bb7-a904-9a5c7ff7bde3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/security/MailConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/email/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/responses/medecin/MedecinResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/responses/patient/PatientResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/requests/account/CreateAdminRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/requests/account/CreateAdminRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/requests/account/CreateMedecinRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/requests/account/CreateMedecinRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/requests/account/CreatePatientRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/requests/account/CreatePatientRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/AccessControllerApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/AccessControllerApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/AccountApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/AccountApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/SpecializationControllerApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/api/SpecializationControllerApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AccessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AccessController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AgendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AgendaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/AppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/SpecializationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/controllers/SpecializationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/security/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/security/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/AccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/AccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/Notification/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/Notification/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/AccessServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/AccessServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/AccountServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
@@ -114,8 +124,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/services/impl/AccountServiceImpl.java</url>
-          <line>34</line>
+          <line>37</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/wellbridge/wellbridge/rest/dto/responses/account/PatientResponse.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

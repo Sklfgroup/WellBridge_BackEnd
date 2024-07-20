@@ -6,6 +6,8 @@ import com.wellbridge.wellbridge.rest.api.AccountApi;
 import com.wellbridge.wellbridge.rest.dto.requests.account.*;
 import com.wellbridge.wellbridge.rest.dto.responses.account.*;
 import com.wellbridge.wellbridge.dao.entities.account.UserRole;
+import com.wellbridge.wellbridge.rest.dto.responses.medecin.MedecinResponseDTO;
+import com.wellbridge.wellbridge.rest.dto.responses.patient.PatientResponseDTO;
 import com.wellbridge.wellbridge.security.jwt.JwtTokenUtil;
 import com.wellbridge.wellbridge.services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/accounts")
-@CrossOrigin(origins = "http://localhost")
+@CrossOrigin
 public class AccountController implements AccountApi {
 
     private final AccountService accountService;
@@ -102,4 +104,18 @@ public class AccountController implements AccountApi {
     public ResponseEntity<List<AccountEntity>> getAccountsByRole(@PathVariable UserRole role) {
         return ResponseEntity.ok(accountService.getAccountsByRole(role));
     }
+
+    @Override
+    public ResponseEntity<List<MedecinResponseDTO>> getMedecinsOfPatient(@PathVariable String patientUuid) {
+        List<MedecinResponseDTO> medecins = accountService.getMedecinsOfPatient(patientUuid);
+        return ResponseEntity.ok(medecins);
+    }
+
+    @Override
+    public ResponseEntity<List<PatientResponseDTO>> getPatientsOfMedecin(@PathVariable String medecinUuid) {
+        List<PatientResponseDTO> patients = accountService.getPatientsOfMedecin(medecinUuid);
+        return ResponseEntity.ok(patients);
+    }
+
+
 }

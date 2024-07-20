@@ -1,5 +1,6 @@
 package com.wellbridge.wellbridge.rest.controllers;
 
+import com.wellbridge.wellbridge.dao.entities.account.AccountEntity;
 import com.wellbridge.wellbridge.rest.api.AccessControllerApi;
 import com.wellbridge.wellbridge.rest.dto.requests.patient.CreateAccessRequest;
 import com.wellbridge.wellbridge.services.AccessService;
@@ -9,9 +10,11 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/access")
-@CrossOrigin(origins = "http://localhost")
+@CrossOrigin
 public class AccessController implements AccessControllerApi {
 
     @Autowired
@@ -34,4 +37,6 @@ public class AccessController implements AccessControllerApi {
         accessService.rejectAccessRequest(accessRequestId);
         return ResponseEntity.ok().build();
     }
+
+
 }

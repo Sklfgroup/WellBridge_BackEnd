@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/agendas")
+@CrossOrigin
 public class AgendaController implements AgendaControllerApi {
     @Autowired
     private AgendaService agendaService;
