@@ -1,6 +1,8 @@
 package com.wellbridge.wellbridge.rest.api;
 
 import com.wellbridge.wellbridge.dao.entities.medecin.AppointmentEntity;
+import com.wellbridge.wellbridge.rest.dto.requests.patient.AppointmentRequestDTO;
+import com.wellbridge.wellbridge.rest.dto.responses.patient.AppointmentResponseDTO;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,14 +13,14 @@ import java.util.List;
 
 public interface AppointmentControllerApi {
     @GetMapping("/patient/{patientId}")
-    List<AppointmentEntity> getAppointmentsByPatient(@PathVariable Long patientId);
+    List<AppointmentResponseDTO> getAppointmentsByPatient(@PathVariable Long patientId);
 
     @PostMapping
-    AppointmentEntity createAppointment(@RequestBody AppointmentEntity appointment);
+    AppointmentResponseDTO createAppointment(@RequestBody AppointmentRequestDTO appointmentRequestDTO);
 
     @PutMapping("/{appointmentId}/cancel")
-    AppointmentEntity cancelAppointment(@PathVariable Long appointmentId);
+    AppointmentResponseDTO cancelAppointment(@PathVariable Long appointmentId);
 
     @PutMapping("/{appointmentId}/confirm")
-    AppointmentEntity confirmAppointment(@PathVariable Long appointmentId);
+    AppointmentResponseDTO confirmAppointment(@PathVariable Long appointmentId);
 }
